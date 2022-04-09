@@ -7,16 +7,16 @@ const fundraisesRoutes = require("./routes/fundraises");
 const dotenv= require("dotenv");
 dotenv.config();
 
-const app = express()
+const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.static(path.join(__dirname, '../front/public')))
 // routes
-app.use("/users", usersRoutes);
-app.use("/transactions", transactionsRoutes);
-app.use("/fundraises", fundraisesRoutes);
+app.use("api/v1/users", usersRoutes);
+app.use("api/v1/transactions", transactionsRoutes);
+app.use("api/v1/fundraises", fundraisesRoutes);
 // app.get('*', (req, res) => {
 //     res.sendFile(path.join(__dirname + '/../front/public/index.html'))
 //   })
